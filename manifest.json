@@ -1,0 +1,40 @@
+{
+	"jpsType": "update",
+	"jpsVersion": "0.3",
+	"application": {
+		"name": "itzg/minecraft-server",
+		"version": "",
+		"type": "",
+		"homepage": "https://registry.hub.docker.com/u/itzg/minecraft-server/",
+		"logo": "",
+		"description": {
+			"text": ""
+		},
+		"categories": ["dockers/apps"],
+		"env": {
+			"topology": {
+				"engine": "",
+				"nodes": [],
+				"ssl": false,
+				"ha": false
+			}
+		},
+		"dockerImage": {
+			"name": "itzg/minecraft-server",
+			"registry": "",
+			"username": "",
+			"password": ""
+		},
+		"settings": {
+			"fields": [{
+					"type": "dockertags",
+					"name": "tag",
+					"values": [{
+							"name": "latest"
+						}
+					]
+				}
+			]
+		}
+	}
+}
