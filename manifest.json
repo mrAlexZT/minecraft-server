@@ -1,40 +1,70 @@
 {
-	"jpsType": "update",
-	"jpsVersion": "0.3",
-	"application": {
-		"name": "itzg/minecraft-server",
-		"version": "",
-		"type": "",
-		"homepage": "https://registry.hub.docker.com/u/itzg/minecraft-server/",
-		"logo": "",
-		"description": {
-			"text": ""
-		},
-		"categories": ["dockers/apps"],
-		"env": {
-			"topology": {
-				"engine": "",
-				"nodes": [],
-				"ssl": false,
-				"ha": false
-			}
-		},
-		"dockerImage": {
-			"name": "itzg/minecraft-server",
-			"registry": "",
-			"username": "",
-			"password": ""
-		},
-		"settings": {
-			"fields": [{
-					"type": "dockertags",
-					"name": "tag",
-					"values": [{
-							"name": "latest"
-						}
-					]
-				}
-			]
-		}
-	}
+  "jpsType": "install",
+  "application": {
+    "description": "Minecraft Live Migration Demo",
+    "name": "Minecraft Live Migration",
+    "logo": "https://raw.githubusercontent.com/JelasticJPS/itzg-minecraft-server/master/images/Minecraft.png",
+    "env": {
+      "topology": {
+        "nodes": [
+          {
+            "docker": {
+              "image": "itzg/minecraft-server",
+              "env": {
+                "EULA": "TRUE"
+              }
+            },
+            "cloudlets": 16,
+            "nodeGroup": "cp",
+            "nodeType": "docker",
+            "displayName": "Minecraft"
+          }
+        ]
+      }
+    },
+    "license": {
+      "terms": {
+        "en": "I agree with <a href='https://account.mojang.com/documents/minecraft_eula' target='_blank'><u>terms of service</u>",
+        "ru": "Я соглашаюсь с <a href='https://account.mojang.com/documents/minecraft_eula' target='_blank'><u>условиями использования</u>"
+      }
+    },
+    "homepage": "https://minecraft.net/",
+    "onInstall": {
+      "call": [
+        "updateConfiguration",
+        "addEndpoint"
+      ]
+    },
+    "procedures": [
+      {
+        "id": "updateConfiguration",
+        "onCall": {
+          "executeShellCommands": {
+            "commands": [
+              "echo \"eula=true\" > /data/eula.txt",
+              "sed  -i \"/usermod\\|groupmod/d\" /start", 
+              "wget https://raw.githubusercontent.com/JelasticJPS/itzg-minecraft-server/master/Properties/server.properties.txt -O /data/server.properties",
+              "reboot"
+            ],
+            "nodeGroup": "cp",
+            "user": "root"
+          }
+        }
+      },
+      {
+        "id": "addEndpoint",
+        "onCall": {
+          "executeScript": {
+            "type": "js",
+            "script": "https://raw.githubusercontent.com/JelasticJPS/itzg-minecraft-server/master/scripts/addEndpoint.js",
+            "params": {
+              "nodeGroup": "cp",
+              "name": "MineCraftServer",
+              "port": 25565
+            }
+          }
+        }
+      }
+    ]
+  }
 }
