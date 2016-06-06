@@ -1,6 +1,7 @@
 {
   "jpsType": "install",
   "application": {
+  	"id": "minecraftserver",
     "description": "Minecraft Live Migration Demo",
     "name": "Minecraft Live Migration",
     "logo": "https://raw.githubusercontent.com/JelasticJPS/itzg-minecraft-server/master/images/Minecraft.png",
