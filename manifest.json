@@ -4,7 +4,7 @@
   	"id": "minecraftserver",
     "description": "Minecraft Live Migration Demo",
     "name": "Minecraft Live Migration",
-    "logo": "https://raw.githubusercontent.com/JelasticJPS/itzg-minecraft-server/master/images/Minecraft.png",
+    "logo": "https://raw.githubusercontent.com/jelastic-jps/itzg-minecraft-server/master/images/Minecraft.png",
     "env": {
       "topology": {
         "nodes": [
@@ -44,7 +44,7 @@
             "commands": [
               "echo \"eula=true\" > /data/eula.txt",
               "sed  -i \"/usermod\\|groupmod/d\" /start", 
-              "wget https://raw.githubusercontent.com/JelasticJPS/itzg-minecraft-server/master/Properties/server.properties.txt -O /data/server.properties",
+              "wget https://raw.githubusercontent.com/jelastic-jps/itzg-minecraft-server/master/Properties/server.properties.txt -O /data/server.properties",
               "reboot"
             ],
             "nodeGroup": "cp",
@@ -57,7 +57,7 @@
         "onCall": {
           "executeScript": {
             "type": "js",
-            "script": "https://raw.githubusercontent.com/JelasticJPS/itzg-minecraft-server/master/scripts/addEndpoint.js",
+            "script": "https://raw.githubusercontent.com/jelastic-jps/itzg-minecraft-server/master/scripts/addEndpoint.js",
             "params": {
               "nodeGroup": "cp",
               "name": "MineCraftServer",
