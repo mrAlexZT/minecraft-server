@@ -25,8 +25,8 @@
     },
     "license": {
       "terms": {
-        "en": "I agree with <a href='https://account.mojang.com/documents/minecraft_eula' target='_blank'><u>terms of service</u>",
-        "ru": "Я соглашаюсь с <a href='https://account.mojang.com/documents/minecraft_eula' target='_blank'><u>условиями использования</u>"
+        "en": "I agree with <a href='https://account.mojang.com/documents/minecraft_eula' target='_blank'><u>terms of service</u></a>",
+        "ru": "Я соглашаюсь с <a href='https://account.mojang.com/documents/minecraft_eula' target='_blank'><u>условиями использования</u></a>"
       }
     },
     "homepage": "https://minecraft.net/",
