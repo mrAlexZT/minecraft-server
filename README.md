@@ -1,4 +1,4 @@
-[![itzg Minecraft server](images/Minecraft.png)](../../../jelastic-docker-birthday)
+<img src="images/Minecraft.png" width="250" alt="itzg Minecraft server" />
 ## itzg Minecraft server
 
 The JPS package deploys itzg Minecraft server that initially contains 1 application server.
