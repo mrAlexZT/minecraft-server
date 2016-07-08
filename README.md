@@ -1,4 +1,4 @@
-<a href="../../../itzg-minecraft-server" alt="itzg Minecraft server" ><img src="images/Minecraft.png" width="250" alt="itzg Minecraft server" /></a>
+<a href="../../../itzg-minecraft-server"><img src="images/Minecraft.png" width="250" alt="itzg Minecraft server" /></a>
 ## itzg Minecraft server
 
 The JPS package deploys itzg Minecraft server that initially contains 1 application server.
