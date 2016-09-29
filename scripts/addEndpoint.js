@@ -6,7 +6,7 @@ import com.hivext.api.development.Scripting;
 var envName = '{env.envName}';
 
 var resp = jelastic.env.control.AddEndpoint(envName, session, nodeId, port, "TCP", "Minecraft Server");
-
+print(resp)
 if (!resp.result) return resp;
 
 var scripting =  hivext.local.exp.wrapRequest(new Scripting({
