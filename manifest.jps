@@ -2,10 +2,11 @@
   "jpsVersion": 0.8,
   "jpsType": "install",
   "application": {
-  	"id": "minecraftserver",
+    "id": "minecraft-server",
     "description": "Minecraft Live Migration Demo",
     "name": "Minecraft Live Migration",
-    "logo": "https://raw.githubusercontent.com/jelastic-jps/itzg-minecraft-server/master/images/Minecraft.png",
+    "logo": "https://github.com/jelastic-jps/minecraft-server/raw/master/images/Minecraft.png",
+    "homepage": "https://github.com/jelastic-jps/minecraft-server",
     "env": {
       "topology": {
         "nodes": [
@@ -28,13 +29,19 @@
         "en": "I agree with <a href='https://account.mojang.com/documents/minecraft_eula' target='_blank'><u>terms of service</u></a>"
       }
     },
-    "homepage": "https://minecraft.net/",
-    "onInstall": {
-      "call": [
-        "updateConfiguration",
-        "addEndpoint"
-      ]
-    },
+    "onInstall": [
+      {
+        "call": [
+          "updateConfiguration",
+          "addEndpoint"
+        ]
+      },
+      {
+        "restartContainers": {
+          "nodeGroup": "cp"
+        }
+      }
+    ],
     "procedures": [
       {
         "id": "updateConfiguration",
@@ -42,12 +49,10 @@
           "executeShellCommands": {
             "commands": [
               "echo \"eula=true\" > /data/eula.txt",
-              "sed  -i \"/usermod\\|groupmod/d\" /start", 
-              "wget https://raw.githubusercontent.com/jelastic-jps/itzg-minecraft-server/master/Properties/server.properties.txt -O /data/server.properties",
-              "reboot"
+              "sed  -i \"/usermod\\|groupmod/d\" /start",
+              "wget https://github.com/jelastic-jps/minecraft-server/raw/master/properties/server.properties -O /data/server.properties"
             ],
-            "nodeGroup": "cp",
-            "user": "root"
+            "nodeGroup": "cp"
           }
         }
       },
@@ -56,10 +61,10 @@
         "onCall": {
           "executeScript": {
             "type": "js",
-            "script": "https://raw.githubusercontent.com/jelastic-jps/itzg-minecraft-server/master/scripts/addEndpoint.js",
+            "script": "https://github.com/jelastic-jps/minecraft-server/raw/master/scripts/addEndpoint.js",
             "params": {
               "nodeGroup": "cp",
-              "name": "MineCraftServer",
+              "name": "Minecraft Server",
               "port": 25565
             }
           }
