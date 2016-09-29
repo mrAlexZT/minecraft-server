@@ -1,10 +1,13 @@
 //@auth
 //@req(nodeId, port)
 
+import com.hivext.api.development.Scripting;
 
-var resp = jelastic.env.control.AddEndpoint(nodeId, port, "TCP", "Minecraft Server");
+var envName = '{env.envName}';
 
-print(resp)
+var resp = jelastic.env.control.AddEndpoint(envName, session, nodeId, port, "TCP", "Minecraft Server");
+
+if (!resp.result) return resp;
 
 var scripting =  hivext.local.exp.wrapRequest(new Scripting({
     serverUrl : "http://" + window.location.host.replace("app", "appstore") + "/",
@@ -13,7 +16,7 @@ var scripting =  hivext.local.exp.wrapRequest(new Scripting({
 
 return scripting.eval({
     script : "InstallApp",
-    targetAppid : appid,
+    targetAppid : envName,
     manifest : {
         "jpsType" : "update",
         "application" : {
