@@ -61,10 +61,9 @@
         "onCall": {
           "executeScript": {
             "type": "js",
-            "script": "https://github.com/jelastic-jps/minecraft-server/raw/master/scripts/addEndpoint.js",
+            "script": "https://github.com/jelastic-jps/minecraft-server/raw/master/scripts/addEndpoint.js?123",
             "params": {
-              "nodeGroup": "cp",
-              "name": "Minecraft Server",
+              "nodeId": "${nodes.cp.first.id}",
               "port": 25565
             }
           }
