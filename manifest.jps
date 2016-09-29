@@ -3,8 +3,8 @@
   "jpsType": "install",
   "application": {
     "id": "minecraft-server",
-    "description": "Minecraft Live Migration Demo",
-    "name": "Minecraft Live Migration",
+    "name": "Minecraft Server",
+    "description": "Minecraft server allows players to play online or via a local area network with other people.",
     "logo": "https://github.com/jelastic-jps/minecraft-server/raw/master/images/Minecraft.png",
     "homepage": "https://github.com/jelastic-jps/minecraft-server",
     "env": {
