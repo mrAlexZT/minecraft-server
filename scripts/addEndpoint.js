@@ -19,11 +19,11 @@ return scripting.eval({
     manifest : {
         "jpsType" : "update",
         "application" : {
-		        "id": "sendEmail",
-		        "name": "Minecraft Server Address",
-		        "success": {
-			        "email": "Your Minecraft server has been successfully deployed. </br> Please use the following server address to connect your Minecraft client: <a href='tcp://${env.domain}:" + resp.object.publicPort + "'>${env.domain}:" + resp.object.publicPort + "</a>."
-		        }
-	      }
+		"id": "sendEmail",
+		"name": "Minecraft Server Address",
+		"success": {
+		        "email": "Your Minecraft server has been successfully deployed. </br> Please use the following server address to connect your Minecraft client: <a href='tcp://${env.domain}:" + resp.object.publicPort + "'>${env.domain}:" + resp.object.publicPort + "</a>."
+		}
+	}
     }
 });
