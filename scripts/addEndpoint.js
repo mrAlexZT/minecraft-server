@@ -8,6 +8,7 @@ var envName = '{env.envName}';
 var resp = jelastic.env.control.AddEndpoint(envName, session, nodeId, port, "TCP", "Minecraft Server");
 print(resp)
 if (!resp.result) return resp;
+return resp;
 
 var scripting =  hivext.local.exp.wrapRequest(new Scripting({
     serverUrl : "http://" + window.location.host.replace("app", "appstore") + "/",
