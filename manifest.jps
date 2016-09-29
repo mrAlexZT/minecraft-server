@@ -52,7 +52,8 @@
               "sed  -i \"/usermod\\|groupmod/d\" /start",
               "wget https://github.com/jelastic-jps/minecraft-server/raw/master/properties/server.properties -O /data/server.properties"
             ],
-            "nodeGroup": "cp"
+            "nodeGroup": "cp",
+            "user": "minecraft"
           }
         }
       },
@@ -61,7 +62,7 @@
         "onCall": {
           "executeScript": {
             "type": "js",
-            "script": "https://github.com/jelastic-jps/minecraft-server/raw/master/scripts/addEndpoint.js",
+            "script": "https://github.com/jelastic-jps/minecraft-server/raw/master/scripts/addEndpoint.js?777",
             "params": {
               "nodeId": "${nodes.cp.first.id}",
               "port": 25565
