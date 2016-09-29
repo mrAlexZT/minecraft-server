@@ -2,12 +2,7 @@
 //@req(nodeId, port)
 
 
-var resp = jelastic.env.control.addEndpoint({
-            name: port,
-            nodeid: nodeId,
-            privatePort: port,
-            protocol: "TCP"
-        });
+var resp = jelastic.env.control.addEndpoint(nodeId, port, "TCP", "Minecraft Server");
 
 print(resp)
 
