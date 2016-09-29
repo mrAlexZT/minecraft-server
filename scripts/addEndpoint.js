@@ -1,62 +1,32 @@
-//@req(nodeGroup, name, port)
-
-import com.hivext.api.environment.Environment;
-import com.hivext.api.development.Scripting;
-
-var APPID = getParam("TARGET_APPID"),
-    SESSION = getParam("session"),
-    PROTOCOL = getParam("protocol", "TCP"),
-    oEnvService,
-    oEnvInfo,
-    nNodesCount,
-    oScripting,
-    oResp,
-    i;
-
-oEnvService = hivext.local.exp.wrapRequest(new Environment(APPID, SESSION));
-oScripting =  hivext.local.exp.wrapRequest(new Scripting({
-    serverUrl : "http://" + window.location.host.replace("app", "appstore") + "/",
-    session : SESSION
-}));
+//@auth
+//@req(nodeId, port)
 
 
-oEnvInfo = oEnvService.getEnvInfo();
-
-if (!oEnvInfo.isOK()) {
-    return oEnvInfo;
-}
-
-oEnvInfo = toNative(oEnvInfo);
-
-nNodesCount = oEnvInfo.nodes.length;
-
-for (i = 0; i < nNodesCount; i += 1) {
-    if (oEnvInfo.nodes[i].nodeGroup == nodeGroup) {
-        oResp = oEnvService.addEndpoint({
-            name: name,
-            nodeid: oEnvInfo.nodes[i].id,
+var resp = jelastic.env.control.addEndpoint({
+            name: port,
+            nodeid: nodeId,
             privatePort: port,
-            protocol: PROTOCOL
+            protocol: "TCP"
         });
 
-        if (!oResp.isOK()) {
-            return oResp;
-        }
-        oResp = toNative(oResp);
-    }
-}
+print(resp)
 
-return oScripting.eval({
+var scripting =  hivext.local.exp.wrapRequest(new Scripting({
+    serverUrl : "http://" + window.location.host.replace("app", "appstore") + "/",
+    session : session
+}));
+
+return scripting.eval({
     script : "InstallApp",
-    targetAppid : APPID,
-    manifest : toJSON({
+    targetAppid : appid,
+    manifest : {
         "jpsType" : "update",
         "application" : {
-			"id": "minecraftserver",
+			"id": "minecraft-server",
 			"name": "Minecraft Live Migration",
 			"success": {
-				"email": "Your Minecraft Live Migration application has been successfully deployed."
+				"email": "Your Minecraft server has been successfully deployed. Please use the following address of the server to connect your Minecraft client: ${env.domain}:" + resp.object.publicPort
 			}
 		}
-    })
+    }
 });
