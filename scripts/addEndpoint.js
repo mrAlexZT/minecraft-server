@@ -3,7 +3,7 @@
 
 import com.hivext.api.development.Scripting;
 
-var envName = '{env.envName}';
+var envName = '${env.envName}';
 
 var resp = jelastic.env.control.AddEndpoint(envName, session, nodeId, port, "TCP", "Minecraft Server");
 print(resp)
