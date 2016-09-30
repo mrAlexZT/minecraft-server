@@ -9,13 +9,13 @@ var resp = jelastic.env.control.AddEndpoint(envName, session, nodeId, port, "TCP
 if (resp.result != 0) return resp;
 
 var scripting =  hivext.local.exp.wrapRequest(new Scripting({
-    serverUrl : "http://" + window.location.host.replace("app", "appstore") + "/",
-    session : session
+    serverUrl : "http://" + window.location.host.replace("app", "appstore") + "/"
 }));
 
 resp = scripting.eval({
     script : "InstallApp",
     targetAppid : '${env.appid}',
+    session: session, 
     manifest : {
         "jpsType" : "update",
         "application" : {
