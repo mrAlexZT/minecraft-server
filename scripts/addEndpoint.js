@@ -22,7 +22,7 @@ resp = scripting.eval({
 		"id": "sendEmail",
 		"name": "Minecraft Server Address",
 		"success": {
-		        "text": "Your Minecraft server has been successfully deployed. </br> Please use the following server address to connect your Minecraft client: <a href='tcp://${env.domain}:" + resp.object.publicPort + "'>${env.domain}:" + resp.object.publicPort + "</a>."
+		        "text": "Your Minecraft server has been successfully deployed. </br> Please use the following server address to connect your Minecraft client: <a href='tcp://${env.domain}:" + resp.object.publicPort + "'>${env.domain}:" + resp.object.publicPort + "</a>.",
 		        "email": "Your Minecraft server has been successfully deployed. </br> Please use the following server address to connect your Minecraft client: <a href='tcp://${env.domain}:" + resp.object.publicPort + "'>${env.domain}:" + resp.object.publicPort + "</a>."
 		}
 	}
