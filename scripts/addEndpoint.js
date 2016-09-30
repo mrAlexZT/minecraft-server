@@ -15,7 +15,7 @@ var scripting =  hivext.local.exp.wrapRequest(new Scripting({
 
 resp = scripting.eval({
     script : "InstallApp",
-    targetAppid : envName,
+    targetAppid : '${env.appid}',
     manifest : {
         "jpsType" : "update",
         "application" : {
