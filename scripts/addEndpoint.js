@@ -13,7 +13,7 @@ var scripting =  hivext.local.exp.wrapRequest(new Scripting({
     session : session
 }));
 
-return scripting.eval({
+resp = scripting.eval({
     script : "InstallApp",
     targetAppid : envName,
     manifest : {
@@ -27,3 +27,7 @@ return scripting.eval({
 	}
     }
 });
+
+print(resp)
+
+return resp;
