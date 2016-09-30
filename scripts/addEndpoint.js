@@ -29,6 +29,4 @@ resp = scripting.eval({
     }
 });
 
-print(resp)
-
 return resp;
