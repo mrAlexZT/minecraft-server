@@ -26,7 +26,7 @@ resp = scripting.eval({
         "jpsType" : "update",
         "application" : {
 		"id": "sendEmail",
-		"name": "Minecraft Server Address",
+		"name": "Minecraft Server",
 		"success": {
 		        "text": text,
 		        "email": text
