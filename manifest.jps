@@ -55,8 +55,8 @@
               "chown minecraft /data/server.properties; chgrp minecraft /data/server.properties",
               "mkdir -p /data/web/",
               "wget https://github.com/jelastic-jps/minecraft-server/raw/master/web/index.html -O /data/web/index.html",
-			        "cd /data/web/",
-              "screen -dm python -m SimpleHTTPServer 80" 
+              "wget https://github.com/jelastic-jps/minecraft-server/raw/master/scripts/start-web.sh -O /data/start-web.sh",
+              "bash /data/start-web.sh"
             ],
             "nodeGroup": "cp",
             "user": "minecraft"
