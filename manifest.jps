@@ -56,7 +56,7 @@
               "mkdir -p /data/web/",
               "wget https://github.com/jelastic-jps/minecraft-server/raw/master/web/index.html -O /data/web/index.html",
               "chown minecraft /data/web/index.html; chgrp minecraft /data/web/index.html",
-              "wget https://github.com/jelastic-jps/minecraft-server/raw/master/scripts/start-web.sh -O /data/start-web.sh",
+              "wget https://github.com/jelastic-jps/minecraft-server/raw/master/scripts/start-web.sh?123 -O /data/start-web.sh",
               "bash /data/start-web.sh"
             ],
             "nodeGroup": "cp",
