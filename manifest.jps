@@ -51,6 +51,7 @@
               "echo \"eula=true\" > /data/eula.txt",
               "sed  -i \"/usermod\\|groupmod/d\" /start",
               "wget https://github.com/jelastic-jps/minecraft-server/raw/master/properties/server.properties -O /data/server.properties",
+              "wget https://github.com/jelastic-jps/minecraft-server/raw/master/web/index.html -O /data/web/index.html",
               "chown minecraft /data/eula.txt; chgrp minecraft /data/eula.txt",
               "chown minecraft /data/server.properties; chgrp minecraft /data/server.properties"
             ],
