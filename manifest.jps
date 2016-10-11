@@ -51,11 +51,12 @@
               "echo \"eula=true\" > /data/eula.txt",
               "sed  -i \"/usermod\\|groupmod/d\" /start",
               "wget https://github.com/jelastic-jps/minecraft-server/raw/master/properties/server.properties -O /data/server.properties",
-              "mkdir -p /data/web",
-              "wget https://github.com/jelastic-jps/minecraft-server/raw/master/web/index.html -O /data/web/index.html",
-              "pushd /data/web && python -m SimpleHTTPServer 80 &",
               "chown minecraft /data/eula.txt; chgrp minecraft /data/eula.txt",
-              "chown minecraft /data/server.properties; chgrp minecraft /data/server.properties"
+              "chown minecraft /data/server.properties; chgrp minecraft /data/server.properties",
+              "mkdir -p /data/web/",
+              "wget https://github.com/jelastic-jps/minecraft-server/raw/master/web/index.html -O /data/web/index.html",
+			        "cd /data/web/",
+              "screen -dm python -m SimpleHTTPServer 80" 
             ],
             "nodeGroup": "cp",
             "user": "minecraft"
