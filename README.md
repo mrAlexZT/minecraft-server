@@ -1,4 +1,4 @@
-<a href="../../../itzg-minecraft-server"><img src="images/Minecraft.png" width="250" alt="itzg Minecraft server" /></a>
+<a href="../../../itzg-minecraft-server"><img src="images/minecraft-logo.png" width="250" alt="cloud Minecraft server" /></a>
 # Minecraft Server
 
 The JPS package deploys and configure Minecraft server.
