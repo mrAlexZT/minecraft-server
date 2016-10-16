@@ -12,4 +12,4 @@ Simply check "I agree" and press "Install" button
 
 Click the deploy button below, specify your email address, choose one of the available cloud providers and press "Install".
 
-[![Deploy](https://github.com/jelastic-jps/git-push-deploy/raw/master/images/deploy-to-jelastic.png)](https://jelastic.com/install-application/?manifest=https://raw.githubusercontent.com/jelastic-jps/minecraft-server/master/manifest.jps) 
+[![Deploy](https://github.com/jelastic-jps/git-push-deploy/raw/master/images/deploy-to-jelastic.png)](https://jelastic.com/install-application/?manifest=https://raw.githubusercontent.com/jelastic-jps/minecraft-server/master/manifest.jps&min-version=4.6) 
