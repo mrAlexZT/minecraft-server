@@ -1,7 +1,46 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <title>Minecraft on top of Dockers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"> 
+    <link href="css/form-style.css" rel="stylesheet" media="screen">
+</head>
 <body>
-${ENDPOINT_URL}
-<br/>
-VANILLA_VERSION
+  <div id="wrap">
+    <div class="container">
+        <div class="page-header">
+            <h1>Jelastic Minecraft Server</h1>
+        </div>
+
+    <p class="lead">Your server is running Minecraft ver. VANILLA_VERSION</p>
+  <br/><br/>
+    <p>To start playing, launch you local Minecraft client and perform the following:</p>
+	<br/>
+    
+      <ol>
+      <li>Click on <b>Change Profile</b> button and ensure the <i>Use version</i> value corresponds to the Minecraft release your server is running (see it above).<br/>
+
+        <img src="img/image00.png"></li>
+
+      <li><span>Save the changes and select the <b>Play</b> option. </span><br/><br/>
+<span>For connection, specify the <b><i>${ENDPOINT_URL}</b></i> server link within the <b>Server Address</b> field.</span><br/>
+
+        <img src="img/image13.png"></li>
+ 
+      <li>Now just confirm the settings and select <b>Multiplayer</b> to start your journey throughout Minecraft world.</br>
+
+        <img src="img/image06.png"> 
+ 
+    </li></ol>
+ <br/>
+      <p>Visit <a href="https://github.com/jelastic-jps">Jelastic JPS Collection</a> to find more useful solutions for deployment in one click.</p>
+ 
+	    <div id="footer">
+         <a href="http://jelastic.com/" >jelastic.com</a>
+    	</div>
+    </div>
+</div>
+
 </body>
 </html>
