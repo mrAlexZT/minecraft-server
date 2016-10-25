@@ -1,16 +1,16 @@
 html,
 body {
     height: 100%;
-	font-size: 15px;
-}
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif !important;
+     }
 
 #wrap {
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin: 0 auto -60px;
-	background-color: #ffffff;
-	font-family: Open Sans;
+    background-color: #ffffff;
 }
 
 #top {
@@ -31,7 +31,7 @@ body {
 	 
 #top p {
 	text-align: center;
-	font-size: 20px;
+	font-size: 16px;
 	line-height: 33px;
 	font-weight: 400;
 	font-style:normal;
@@ -62,8 +62,8 @@ h1 {
 	outline: 0;
 	border: 0;
 	vertical-align: baseline;
-	font-style: inherit;
 	padding: 0;
+	font-family: inherit;
 	}
 
 .container {
@@ -123,7 +123,7 @@ img {
 	text-transform: uppercase;
 	color: #777;
 	font-size: 12px;
-	font-family: 'OpenSansBold',sans-serif;
+	font-weight: bold;
 	letter-spacing: 2px;
 	}
 
