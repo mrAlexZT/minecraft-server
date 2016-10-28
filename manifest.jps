@@ -5,7 +5,7 @@
     "id": "minecraft-server",
     "name": "Minecraft Server",
     "description": "Minecraft server allows players to play online or via a local area network with other people.",
-    "logo": "https://github.com/jelastic-jps/minecraft-server/raw/master/images/Minecraft.png",
+    "logo": "https://github.com/jelastic-jps/minecraft-server/raw/master/images/minecraft-logo.png",
     "homepage": "https://github.com/jelastic-jps/minecraft-server",
     "env": {
       "topology": {
