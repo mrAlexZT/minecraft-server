@@ -16,7 +16,7 @@
               "env": {
                 "EULA": "TRUE"
               },
-              "entrypoint": "/start-server.sh"
+              "entryPoint": "/start-server.sh"
             },
             "cloudlets": 16,
             "nodeGroup": "cp",
