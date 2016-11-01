@@ -15,7 +15,8 @@
               "image": "itzg/minecraft-server",
               "env": {
                 "EULA": "TRUE"
-              }
+              },
+              "entrypoint": "/start-server.sh"
             },
             "cloudlets": 16,
             "nodeGroup": "cp",
@@ -51,10 +52,14 @@
               "echo \"eula=true\" > /data/eula.txt",
               "sed  -i \"/usermod\\|groupmod/d\" /start",
               "wget https://github.com/jelastic-jps/minecraft-server/raw/master/properties/server.properties -O /data/server.properties",
+              "wget https://github.com/jelastic-jps/minecraft-server/raw/master/lib/jelastic-gc-agent.jar -O /data/jelastic-gc-agent.jar",
+              "wget https://github.com/jelastic-jps/minecraft-server/raw/master/scripts/memoryConfig.sh -O /data/memoryConfig.sh",
+              "wget https://github.com/jelastic-jps/minecraft-server/raw/master/scripts/start-server.sh -O /start-server.sh",
+              "chmod +x /start-server.sh",
               "mkdir -p /data/web/",
               "chown -R minecraft:minecraft /data",
               "wget https://github.com/jelastic-jps/minecraft-server/raw/master/web/index.html -O /data/web/index.html",
-              "wget https://github.com/jelastic-jps/minecraft-server/raw/master/scripts/start-web.sh?123 -O /data/start-web.sh",
+              "wget https://github.com/jelastic-jps/minecraft-server/raw/master/scripts/start-web.sh -O /data/start-web.sh",
               "bash /data/start-web.sh"
             ],
             "nodeGroup": "cp",
@@ -67,7 +72,7 @@
         "onCall": {
           "executeScript": {
             "type": "js",
-            "script": "https://github.com/jelastic-jps/minecraft-server/raw/master/scripts/addEndpoint.js?123",
+            "script": "https://github.com/jelastic-jps/minecraft-server/raw/master/scripts/addEndpoint.js",
             "params": {
               "nodeId": "${nodes.cp.first.id}",
               "port": 25565
