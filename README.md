@@ -5,8 +5,8 @@ Set up your own Minecraft server of the latest version inside the Cloud in one c
 
 
 To get your personal Minecraft server inside the cloud, perform the following:
-- _if you don’t have Jelastic account yet_ - scroll down to the **_Deploy Now section_** and follow the provided instruction. 
-- _if you have Jelastic account_  - copy link to the **_manifest.jps_** file above and [import](https://docs.jelastic.com/environment-import) it to the required Jelastic installation.
+- _if you don’t have Jelastic account yet_ - scroll down to the **Deploy Now** section and follow the provided instruction. 
+- _if you have Jelastic account_  - copy link to the **manifest.jps** file above and [import](https://docs.jelastic.com/environment-import) it to the required Jelastic installation.
 
 
 Within the opened installation confirmation frame, specify your environment data and proceed with **Install**.
