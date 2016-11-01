@@ -25,4 +25,4 @@ For detailed guidance, refer to the [Minecraft Server Hosting](http://blog.jelas
 Click the **Deploy to Jelastic** button below, specify your email address, choose one of the available cloud hosting providers and proceed with **Install** for automatic registration and package deployment.
 
 
-[![Deploy](https://github.com/jelastic-jps/git-push-deploy/raw/master/images/deploy-to-jelastic.png)](https://jelastic.com/install-application/?manifest=https://raw.githubusercontent.com/jelastic-jps/minecraft-server/master/manifest.jps&min-version=4.6&keys=app.mircloud.host) 
+[![Deploy](https://github.com/jelastic-jps/git-push-deploy/raw/master/images/deploy-to-jelastic.png)](https://jelastic.com/install-application/?manifest=https://raw.githubusercontent.com/jelastic-jps/minecraft-server/master/manifest.jps&min-version=4.6&keys=app.mircloud.host;app.jelastic.dogado.eu;app.fi.cloudplatform.fi;app.appengine.flow.ch;app.jelasticlw.com.br;app.paas.datacenter.fi;app.whelastic.net) 
